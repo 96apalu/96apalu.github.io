@@ -688,16 +688,7 @@
                 message += `${index + 1}. ${item.name} (SL: ${item.quantity}) - Giá: ${item.price}\n`;
             });
             message += `Tổng cộng: ${cartTotalPrice.innerText}`;
-
-            // Tự động copy nội dung đơn hàng vào bộ nhớ tạm (Clipboard) của khách
-            navigator.clipboard.writeText(message).then(() => {
-                alert("🛒 Đã tự động copy chi tiết đơn hàng!\n\nHệ thống sẽ chuyển bạn sang Zalo chat, bạn chỉ cần nhấn Dán (Ctrl + V) vào ô chat và bấm Gửi là xong nhé.");
-                // Mở cửa sổ chat Zalo chính xác với số điện thoại của bạn
-                window.open(`https://zalo.me/0942135506`, '_blank');
-            }).catch(err => {
-                // Phòng hờ nếu trình duyệt chặn quyền copy, vẫn mở Zalo để không bị nghẽn trải nghiệm
-                window.open(`https://zalo.me/0942135506`, '_blank');
-            });
+            window.open(`https://zalo.me/0942135506?text=${encodeURIComponent(message)}`, '_blank');
         });
 
         function updatePaginationControls() {
