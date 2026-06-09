@@ -187,7 +187,7 @@
                 
                 <div class="space-y-5 flex flex-col justify-between">
                     <div>
-                        <h2 class="text-base sm:text-xl font-extrabold text-gray-900 tracking-tight mb-2 whitespace-nowrap">Thông Tin Liên Hệ & Thanh Toán</h2>
+                        <h2 class="text-base sm:text-xl font-extrabold text-gray-900 tracking-tight mb-2">Thông Tin Liên Hệ & Thanh Toán</h2>
                         <p class="text-gray-600 text-sm leading-relaxed">Gặp bất cứ khó khăn nào? Hãy liên hệ trực tiếp với chúng tôi hoặc thực hiện thanh toán chuyển khoản nhanh chóng theo thông tin chi tiết bên dưới.</p>
                     </div>
 
@@ -217,7 +217,7 @@
 
                     <div class="p-4 bg-white rounded-xl border-2 border-teal-600/20 shadow-sm relative overflow-hidden bg-gradient-to-br from-white to-teal-50/10">
                         <div class="absolute top-0 left-0 w-1.5 h-full bg-teal-600"></div>
-                        <h4 class="font-bold text-xs sm:text-sm text-teal-800 uppercase tracking-wider mb-3 flex items-center whitespace-nowrap">
+                        <h4 class="font-bold text-xs sm:text-sm text-teal-800 uppercase tracking-wider mb-3 flex items-center">
                             <i class="fa-solid fa-credit-card mr-2 text-sm shrink-0"></i> Thông Tin Thanh Toán Chuyển Khoản
                         </h4>
                         
@@ -228,13 +228,13 @@
                                     <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">TPBANK (TPB)</span>
                                 </div>
                                 
-                                <div class="flex justify-between items-center py-1 border-b border-gray-100 gap-1">
+                                <div class="flex flex-col xs:flex-row xs:justify-between xs:items-center py-1 border-b border-gray-100 gap-1">
                                     <span class="text-gray-500 font-medium text-xs sm:text-sm shrink-0">Số tài khoản:</span>
-                                    <div class="flex items-center space-x-1.5 max-w-full justify-end">
-                                        <span id="stk-text" class="font-mono font-black text-teal-600 text-base sm:text-lg tracking-tight sm:tracking-wider">02738162203</span>
-                                        <button onclick="copySTK()" class="text-[10px] bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white font-semibold px-1.5 py-0.5 rounded border border-teal-200 transition-all active:scale-95 flex items-center gap-0.5 shrink-0" title="Sao chép số tài khoản">
+                                    <div class="flex items-center space-x-2 max-w-full justify-between xs:justify-end w-full xs:w-auto">
+                                        <button onclick="copySTK()" class="text-[10px] bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white font-semibold px-2 py-1 rounded border border-teal-200 transition-all active:scale-95 flex items-center gap-1 shrink-0" title="Sao chép số tài khoản">
                                             <i class="fa-regular fa-copy"></i> <span id="copy-btn-text">Copy</span>
                                         </button>
+                                        <span id="stk-text" class="font-mono font-black text-teal-600 text-sm sm:text-lg tracking-normal sm:tracking-wider whitespace-nowrap">02738162203</span>
                                     </div>
                                 </div>
                                 
