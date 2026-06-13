@@ -1,25 +1,18 @@
-// Kho dữ liệu ngôn ngữ dịch thuật kết hợp (Hỗ trợ 6 ngôn ngữ theo hệ thống múi giờ của cửa hàng)
+// Kho dữ liệu ngôn ngữ dịch thuật tinh gọn chuẩn hóa (Đã xóa toàn bộ hanoi_clock thừa)
 const translations = {
     vi: {
-        // Navigation & Topbar
         nav_home: "Trang chủ",
         nav_products: "Sản phẩm",
         nav_contact: "Liên hệ",
-        
-        // Hero Banner
         hero_badge: "☯️ Tuyệt Tác Song Ngư Hội Tụ 2026",
         hero_title: "Vòng Tuần Hoàn Của Thịnh Vượng & Bình Yên",
         hero_desc: "Nơi cặp cá chép Koi uốn lượn thướt tha tạo thành biểu tượng Song Ngư hoàn mỹ, mang lại dòng chảy năng lượng cân bằng, may mắn và tài lộc vĩnh cửu.",
         hero_btn: "Chiêm Ngưỡng Tuyệt Tác 🌊",
-        
-        // Product Section Header
         section_title: "Sản Phẩm Nổi Bật",
         section_desc: "Hiển thị 6 sản phẩm mỗi trang trên tổng số 30 sản phẩm",
         page_text: "Trang",
         btn_prev: "<i class='fa-solid fa-chevron-left mr-1'></i> Trước",
         btn_next: "Sau <i class='fa-solid fa-chevron-right ml-1'></i>",
-        
-        // Contact & Payment Section
         contact_title: "Thông Tin Liên Hệ & Thanh Toán",
         contact_desc: "Gặp bất cứ khó khăn nào? Hãy liên hệ trực tiếp với chúng tôi theo thông tin chi tiết bên dưới:",
         contact_address_title: "Địa chỉ cửa hàng",
@@ -31,24 +24,18 @@ const translations = {
         payment_acc_holder: "Chủ tài khoản:",
         map_btn: "Tìm kiếm",
         map_placeholder: "Tìm kiếm vị trí trên bản đồ...",
-        
-        // Cart Modal
         cart_title: "<i class='fa-solid fa-bag-shopping mr-2 text-teal-600'></i> Giỏ Hàng Của Bạn",
         cart_empty: "Giỏ hàng trống rỗng",
         cart_total_text: "Tổng tiền thanh toán:",
         cart_checkout_btn: "<i class='fa-solid fa-paper-plane'></i> Gửi Đơn Hàng Qua Zalo",
         zalo_msg_prefix: "Xin chào Apalu-Store, tôi muốn đặt mua các sản phẩm:\n",
         zalo_msg_total: "Tổng cộng: ",
-
-        // Categories & Badges
         cat_fashion: "Thời trang",
         cat_sports: "Dụng cụ thể thao",
         cat_health: "Dụng cụ thể thao - Chăm sóc sức khỏe",
         cat_accessories: "Phụ kiện",
         badge_banchay: "Bán chạy",
         badge_moi: "Mới",
-
-        // 12 Tên Sản Phẩm Động
         p1: "Áo thun thêu sao vàng",
         p2: "Áo polo thêu hình lân",
         p3: "Áo polo thể thao",
@@ -214,7 +201,7 @@ const translations = {
         nav_products: "商品一覧",
         nav_contact: "お問い合わせ",
         hero_badge: "☯️ 双魚錦鯉傑作コレクション 2026",
-        hero_title: "繁栄と調和の永遠なる循環",
+        hero_title: "繁栄と調和의永遠なる循環",
         hero_desc: "二匹の錦鯉が優雅にしなりながら見事な双魚のシンボルを描き、心に平穏を、人生に永続する富と幸運の流れをもたらします。",
         hero_btn: "傑作を堪能する 🌊",
         section_title: "注目の商品",
@@ -226,7 +213,7 @@ const translations = {
         contact_desc: "何かお困りですか？以下の詳細情報から直接お問い合わせください：",
         contact_address_title: "店舗住所",
         contact_address_detail: "ハノイ市タインスアン区レ・ヴァン・ルオン通り21番地",
-        contact_zalo: "Zalo 24/7 カスタ머サポート",
+        contact_zalo: "Zalo 24/7 カスタマーサポート",
         payment_title: "<i class='fa-solid fa-credit-card mr-2 text-xs shrink-0'></i>銀行振込によるお支払い情報",
         payment_bank: "銀行名:",
         payment_acc_num: "口座番号:",
@@ -328,7 +315,6 @@ function updateContent(lang) {
     if (typeof displayProducts === 'function' && typeof currentPage !== 'undefined') {
         displayProducts(currentPage);
     }
-
     if (typeof updateCartUI === 'function') {
         updateCartUI();
     }
