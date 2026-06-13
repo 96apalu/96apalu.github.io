@@ -5,7 +5,6 @@ const translations = {
         nav_home: "Trang chủ",
         nav_products: "Sản phẩm",
         nav_contact: "Liên hệ",
-        hanoi_clock: "Hà Nội:",
         
         // Hero Banner
         hero_badge: "☯️ Tuyệt Tác Song Ngư Hội Tụ 2026",
@@ -67,7 +66,6 @@ const translations = {
         nav_home: "Home",
         nav_products: "Products",
         nav_contact: "Contact",
-        hanoi_clock: "Hanoi:",
         hero_badge: "☯️ The Pisces Koi Collection 2026",
         hero_title: "The Eternal Flow of Fortune & Harmony",
         hero_desc: "Where twin Koi fish glide in perfect harmony, forming the sacred Pisces emblem to bring balance, luck, and boundless prosperity to your life.",
@@ -117,7 +115,6 @@ const translations = {
         nav_home: "首页",
         nav_products: "产品中心",
         nav_contact: "联系我们",
-        hanoi_clock: "河内:",
         hero_badge: "☯️ 2026 双鱼锦鲤杰作汇聚",
         hero_title: "繁荣与和谐的永恒循环",
         hero_desc: "双鲤鱼优美地盘旋，构成完美的双鱼座标志，为您带来平衡、幸运与永恒的财富能量流。",
@@ -130,7 +127,7 @@ const translations = {
         contact_title: "联系方式与付款信息",
         contact_desc: "遇到任何困难？请通过以下详细信息直接与我们联系：",
         contact_address_title: "门店地址",
-        contact_address_detail: "河内市清春郡黎文良路21号",
+        contact_address_detail: "河내市清春郡黎文良路21号",
         contact_zalo: "Zalo 24/7 咨询",
         payment_title: "<i class='fa-solid fa-credit-card mr-2 text-xs shrink-0'></i>银行转账付款信息",
         payment_bank: "银行:",
@@ -167,7 +164,6 @@ const translations = {
         nav_home: "Accueil",
         nav_products: "Produits",
         nav_contact: "Contact",
-        hanoi_clock: "Hanoi:",
         hero_badge: "☯️ Collection Poissons Koi 2026",
         hero_title: "Le Flux Éternel de Fortune & d'Harmonie",
         hero_desc: "Où les poissons Koi jumeaux glissent en parfaite harmonie, formant le symbole sacré des Poissons pour apporter équilibre, chance et prospérité.",
@@ -217,7 +213,6 @@ const translations = {
         nav_home: "ホーム",
         nav_products: "商品一覧",
         nav_contact: "お問い合わせ",
-        hanoi_clock: "ハノイ:",
         hero_badge: "☯️ 双魚錦鯉傑作コレクション 2026",
         hero_title: "繁栄と調和の永遠なる循環",
         hero_desc: "二匹の錦鯉が優雅にしなりながら見事な双魚のシンボルを描き、心に平穏を、人生に永続する富と幸運の流れをもたらします。",
@@ -231,7 +226,7 @@ const translations = {
         contact_desc: "何かお困りですか？以下の詳細情報から直接お問い合わせください：",
         contact_address_title: "店舗住所",
         contact_address_detail: "ハノイ市タインスアン区レ・ヴァン・ルオン通り21番地",
-        contact_zalo: "Zalo 24/7 カスタマーサポート",
+        contact_zalo: "Zalo 24/7 カスタ머サポート",
         payment_title: "<i class='fa-solid fa-credit-card mr-2 text-xs shrink-0'></i>銀行振込によるお支払い情報",
         payment_bank: "銀行名:",
         payment_acc_num: "口座番号:",
@@ -242,7 +237,7 @@ const translations = {
         cart_empty: "カートは空です",
         cart_total_text: "合計金額:",
         cart_checkout_btn: "<i class='fa-solid fa-paper-plane'></i> Zaloで注文を送信",
-        zalo_msg_prefix: "こんにちは Apalu-Store、これらの商品を購入したいです：\n",
+        zalo_msg_prefix: "こんにちは Apalu-Store、theseの商品を購入したいです：\n",
         zalo_msg_total: "合計: ",
         cat_fashion: "ファッション",
         cat_sports: "スポーツ用品",
@@ -267,7 +262,6 @@ const translations = {
         nav_home: "홈",
         nav_products: "상품 보기",
         nav_contact: "문의하기",
-        hanoi_clock: "하노이:",
         hero_badge: "☯️ 2026 쌍어 금붕어 명작 컬렉션",
         hero_title: "번영과 평화의 영원한 순환",
         hero_desc: "두 마리의 코이 잉어가 부드럽게 유영하며 완벽한 쌍어궁 문양을 이루어, 당신의 삶에 균형 잡힌 에너지와 행운, 영원한 재물을 가져다줍니다.",
@@ -315,7 +309,6 @@ const translations = {
     }
 };
 
-// Hàm cập nhật tất cả phần tử HTML tĩnh có thuộc tính data-i18n
 function updateContent(lang) {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(element => {
@@ -325,43 +318,35 @@ function updateContent(lang) {
         }
     });
 
-    // Cập nhật Input Placeholder riêng biệt
     const mapInput = document.getElementById('map-search-input');
     if (mapInput && translations[lang] && translations[lang]['map_placeholder']) {
         mapInput.placeholder = translations[lang]['map_placeholder'];
     }
 
-    // Thiết lập thẻ cấu trúc hỗ trợ SEO quốc tế
     document.documentElement.lang = lang;
 
-    // Làm mới UI danh sách sản phẩm động theo ngôn ngữ mới
     if (typeof displayProducts === 'function' && typeof currentPage !== 'undefined') {
         displayProducts(currentPage);
     }
 
-    // Làm mới UI giỏ hàng hiện tại
     if (typeof updateCartUI === 'function') {
         updateCartUI();
     }
 }
 
-// Hàm ánh xạ và dịch các thuộc tính của Object sản phẩm động
 function getLocalizedProduct(product, lang) {
     const localized = { ...product };
     const langSet = translations[lang];
     if (!langSet) return localized;
 
-    // Dịch tên sản phẩm
     if (langSet[`p${product.id}`]) {
         localized.name = langSet[`p${product.id}`];
     }
-    // Dịch danh mục
     if (product.category === "Thời trang" && langSet['cat_fashion']) localized.category = langSet['cat_fashion'];
     else if (product.category === "Dụng cụ thể thao" && langSet['cat_sports']) localized.category = langSet['cat_sports'];
     else if (product.category === "Dụng cụ thể thao - Chăm sóc sức khỏe" && langSet['cat_health']) localized.category = langSet['cat_health'];
     else if (product.category === "Phụ kiện" && langSet['cat_accessories']) localized.category = langSet['cat_accessories'];
 
-    // Dịch Badge nhãn dán
     if (product.badge === "Bán chạy" && langSet['badge_banchay']) localized.badge = langSet['badge_banchay'];
     else if (product.badge === "Mới" && langSet['badge_moi']) localized.badge = langSet['badge_moi'];
 
