@@ -119,59 +119,71 @@
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-slate-950 via-teal-950 to-emerald-950 text-white py-16 sm:py-24 px-4 text-center relative overflow-hidden w-full">
-        <div class="absolute inset-0 opacity-25 pointer-events-none flex items-center justify-center overflow-hidden">
-            <svg class="w-[260px] h-[260px] sm:w-[480px] sm:h-[480px] text-yellow-500/40 animate-[spin_60s_linear_infinite]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="2" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                </defs>
-                <g transform="translate(100,100)">
-                    <g class="text-yellow-500" fill="currentColor" filter="url(#gold-glow)">
-                        <path d="M 0,-80 C 35,-75 55,-45 45,-10 C 35,25 15,50 0,70 C 12,45 25,20 22,-10 C 18,-40 0,-65 0,-80 Z" />
-                        <path d="M 0,70 C -15,85 -35,105 -20,120 C 0,125 12,95 0,70 Z" class="text-yellow-400" fill="currentColor" opacity="0.9" />
-                        <path d="M 0,70 C 15,85 30,100 25,115 C 10,115 2,90 0,70 Z" class="text-amber-500" fill="currentColor" opacity="0.8" />
-                        <path d="M 38,-45 C 60,-50 65,-25 45,-15 C 38,-22 35,-35 38,-45 Z" class="text-amber-400" fill="currentColor" />
-                        <path d="M 12,-60 C 25,-72 32,-60 22,-50 C 16,-52 13,-56 12,-60 Z" class="text-yellow-600" fill="currentColor" />
-                        <path d="M 0,-80 C 8,-90 18,-85 14,-75" fill="none" stroke="#facc15" stroke-width="2" />
-                        <circle cx="12" cy="-68" r="2.5" fill="#1e293b" />
-                        <circle cx="11" cy="-69" r="1" fill="#ffffff" />
-                    </g>
-                    <g transform="rotate(180)" class="text-amber-500" fill="currentColor" filter="url(#gold-glow)">
-                        <path d="M 0,-80 C 35,-75 55,-45 45,-10 C 35,25 15,50 0,70 C 12,45 25,20 22,-10 C 18,-40 0,-65 0,-80 Z" />
-                        <path d="M 0,70 C -15,85 -35,105 -20,120 C 0,125 12,95 0,70 Z" class="text-yellow-500" fill="currentColor" opacity="0.9" />
-                        <path d="M 0,70 C 15,85 30,100 25,115 C 10,115 2,90 0,70 Z" class="text-yellow-400" fill="currentColor" opacity="0.8" />
-                        <path d="M 38,-45 C 60,-50 65,-25 45,-15 C 38,-22 35,-35 38,-45 Z" class="text-yellow-400" fill="currentColor" />
-                        <path d="M 12,-60 C 25,-72 32,-60 22,-50 C 16,-52 13,-56 12,-60 Z" class="text-amber-600" fill="currentColor" />
-                        <path d="M 0,-80 C 8,-90 18,-85 14,-75" fill="none" stroke="#facc15" stroke-width="2" />
-                        <circle cx="12" cy="-68" r="2.5" fill="#1e293b" />
-                        <circle cx="11" cy="-69" r="1" fill="#ffffff" />
-                    </g>
-                </g>
-            </svg>
-            <svg class="absolute bottom-0 left-0 w-full h-16 sm:h-28 text-white opacity-[0.15]" viewBox="0 0 1440 74" fill="currentColor" preserveAspectRatio="none">
-                <path d="M0,32L48,37.3C96,43,192,53,288,48C384,43,480,21,576,16C672,11,768,21,864,32C960,43,1056,53,1152,58.7L1248,64L1344,64L1440,58.7L1440,74L1344,74L1248,74L1152,74L1056,74L964,74L864,74L768,74L672,74L576,74L480,74L384,74L288,74L192,74L96,74L48,74L0,74Z"></path>
-            </svg>
+    <!-- HERO SECTION: Tinh Vân Vũ Trụ Tím Hồng & Vòng Xoay Biểu Tượng Cự Giải Cách Điệu -->
+    <section class="bg-gradient-to-br from-[#1e1b4b] via-[#2e1065] to-[#4c1d95] text-white py-16 sm:py-28 px-4 text-center relative overflow-hidden w-full flex flex-col items-center justify-center min-h-[580px] sm:min-h-[700px]">
+        
+        <!-- HỆ THỐNG LỚP NỀN TINH VÂN & CHUYỂN ĐỘNG QUỸ ĐẠO (Z-0) -->
+        <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
+            <!-- Tinh vân phát sáng rực rỡ sắc Tím, Hồng và Xanh Lam theo image_85b787.jpg -->
+            <div class="absolute w-[600px] h-[600px] sm:w-[900px] sm:h-[900px] rounded-full bg-pink-500/[0.12] blur-[120px] -translate-x-12 -translate-y-6"></div>
+            <div class="absolute w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] rounded-full bg-purple-600/[0.15] blur-[100px] translate-x-12 translate-y-12"></div>
+            <div class="absolute w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] rounded-full bg-blue-500/[0.1] blur-[90px]"></div>
+
+            <!-- Các hạt sao nhỏ lấp lánh mô phỏng bầu trời sao tinh vân -->
+            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] sm:[background-size:24px_24px]"></div>
+
+            <!-- KHUNG BIỂU TƯỢNG XOAY CHÍNH TRUNG TÂM (Theo image_85b3de.png) -->
+            <div class="relative w-[290px] h-[290px] sm:w-[500px] sm:h-[500px] flex items-center justify-center animate-[spin_30s_linear_infinite]">
+                
+                <!-- SVG tái hiện chuẩn xác biểu tượng từ ảnh đính kèm với hiệu ứng phát sáng neon sáng trắng -->
+                <svg class="w-full h-full text-white/80 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Vòng cung lớn phía trên bên phải -->
+                    <path d="M 160,100 A 60,60 0 0,0 70,48" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                    <!-- Vòng cung lớn phía dưới bên trái -->
+                    <path d="M 40,100 A 60,60 0 0,0 130,152" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                    
+                    <!-- Vòng tròn khép kín bên trái -->
+                    <circle cx="68" cy="74" r="24" stroke="currentColor" stroke-width="4" />
+                    
+                    <!-- Vòng tròn khép kín bên phải -->
+                    <circle cx="132" cy="126" r="24" stroke="currentColor" stroke-width="4" />
+                </svg>
+
+                <!-- Quỹ đạo phụ: Vòng chấm sáng bọc nhẹ bên ngoài tạo độ sâu vũ trụ -->
+                <div class="absolute inset-[-15px] rounded-full border border-white/5 border-dashed scale-105 animate-[spin_50s_linear_infinite_reverse]"></div>
+            </div>
         </div>
 
-        <div class="max-w-3xl mx-auto relative z-10 space-y-4 sm:space-y-6">
-            <span class="bg-emerald-500/10 backdrop-blur-md border border-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-semibold px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-2">
+        <!-- KHỐI NỘI DUNG CHÍNH (Z-10 - Nổi bật trên nền tinh vân) -->
+        <div class="max-w-3xl mx-auto relative z-10 flex flex-col items-center space-y-6 sm:space-y-8">
+
+            <!-- BADGE TIÊU ĐỀ PHỤ -->
+            <span class="bg-purple-500/10 backdrop-blur-md border border-purple-500/20 text-purple-200 text-[10px] sm:text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-2 shadow-sm">
                 <span data-i18n="hero_badge">☯️ Tuyệt Tác Song Ngư Hội Tụ 2026</span>
             </span>
-            <h1 class="text-2xl sm:text-5xl font-serif font-bold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-teal-100 to-emerald-200" data-i18b="hero_title">
+            
+            <!-- TIÊU ĐỀ CHÍNH -->
+            <h1 class="text-2xl sm:text-5xl font-serif font-bold tracking-tight leading-tight px-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-pink-100 to-purple-200" data-i18b="hero_title">
                 Vòng Tuần Hoàn Của Thịnh Vượng & Bình Yên
             </h1>
-            <p class="text-teal-100/80 text-xs sm:text-base max-w-xl mx-auto font-light leading-relaxed px-2" data-i18n="hero_desc">
+            
+            <!-- ĐOẠN MÔ TẢ -->
+            <p class="text-purple-100/70 text-xs sm:text-base max-w-xl mx-auto font-light leading-relaxed px-4" data-i18n="hero_desc">
                 Nơi cặp cá chép Koi uốn lượn thướt tha tạo thành biểu tượng Song Ngư hoàn mỹ, mang lại dòng chảy năng lượng cân bằng, may mắn và tài lộc vĩnh cửu.
             </p>
+            
+            <!-- NÚT CTA ĐƯỢC PHỐI MÀU THEO TÔNG TÍM HỒNG -->
             <div class="pt-2">
-                <a href="#products-section" class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 text-slate-950 font-bold text-xs sm:text-sm px-6 sm:px-10 py-3 sm:py-4 rounded-full shadow-lg shadow-emerald-950/40 hover:from-emerald-300 hover:to-cyan-300 transition duration-300 inline-block transform hover:-translate-y-1" data-i18n="hero_btn">
+                <a href="#products-section" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-extrabold text-xs sm:text-sm px-8 sm:px-12 py-3.5 sm:py-4 rounded-full shadow-lg shadow-purple-950/40 hover:from-pink-400 hover:to-indigo-400 transition duration-300 inline-block transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide" data-i18n="hero_btn">
                     Chiêm Ngưỡng Tuyệt Tác 🌊
                 </a>
             </div>
         </div>
+
+        <!-- SVG ĐƯỜNG CONG SÓNG TRẮNG ĐÁY MỀM MẠI -->
+        <svg class="absolute bottom-0 left-0 w-full h-12 sm:h-24 text-gray-50 opacity-100 z-10 pointer-events-none" viewBox="0 0 1440 74" fill="currentColor" preserveAspectRatio="none">
+            <path d="M0,32L48,37.3C96,43,192,53,288,48C384,43,480,21,576,16C672,11,768,21,864,32C960,43,1056,53,1152,58.7L1248,64L1344,64L1440,58.7L1440,74L1344,74L1248,74L1152,74L1056,74L964,74L864,74L768,74L672,74L576,74L480,74L384,74L288,74L192,74L96,74L48,74L0,74Z"></path>
+        </svg>
     </section>
 
     <main id="products-section" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
