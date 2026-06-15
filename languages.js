@@ -1,4 +1,4 @@
-// Kho dữ liệu ngôn ngữ dịch thuật tinh gọn chuẩn hóa (Đã xóa toàn bộ hanoi_clock thừa)
+// Kho dữ liệu ngôn ngữ dịch thuật tinh gọn chuẩn hóa
 const translations = {
     vi: {
         nav_home: "Trang chủ",
@@ -202,7 +202,7 @@ const translations = {
         nav_contact: "お問い合わせ",
         hero_badge: "☯️ 双魚錦鯉傑作コレクション 2026",
         hero_title: "繁栄と調和의永遠なる循環",
-        hero_desc: "二匹の錦鯉が優雅にしなりながら見事な双魚のシンボルを描き、心に平穏を、人生に永続する富と幸運の流れをもたらします。",
+        hero_desc: "二匹の錦鯉が優雅にしなりながら見事な双魚のシンボルを描き、心に平穏을、人生に永続する富と幸運の流れをもたらします。",
         hero_btn: "傑作を堪能する 🌊",
         section_title: "注目の商品",
         section_desc: "全30商品中、1ページあたり6商品を表示",

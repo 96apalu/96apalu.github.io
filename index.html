@@ -15,6 +15,7 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             top: 0 !important;
+            overflow-x: hidden; /* Ngăn chặn triệt để mọi hành vi tràn ngang vô ý */
         }
         @keyframes cart-pop {
             0% { transform: scale(1); }
@@ -53,17 +54,16 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen w-full">
 
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
             
-            <a href="#" class="inline-flex items-center gap-2 sm:gap-3 h-full shrink-0">
-                <img src="./image/logo.png" alt="Apalu Store Logo" class="h-16 sm:h-16 w-auto object-contain">
-                <span class="text-2xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#001F3F] to-teal-950 tracking-wide">
+            <a href="#" class="inline-flex items-center gap-1.5 sm:gap-3 h-full shrink-0">
+                <img src="./image/logo.png" alt="Apalu Store Logo" class="h-9 sm:h-12 w-auto object-contain">
+                <span class="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#001F3F] to-blue-700 tracking-wide">
                     Apalu-Store
                 </span>
-                <!-- Mã màu: Red( Metallic Crimson #B22222); Blue: Midnight Ocean (#001F3F) -->
             </a>
                    
             <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-600">
@@ -72,43 +72,43 @@
                 <a href="#contact-section" class="hover:text-teal-600 transition" data-i18n="nav_contact">Liên hệ</a>
             </nav>
             
-            <div class="flex items-center space-x-2 sm:space-x-3 h-10">
+            <div class="flex items-center space-x-1.5 sm:space-x-3 h-10 shrink-0">
                 
-                <button id="cart-toggle-btn" class="cart-ripple group relative h-10 w-10 bg-gray-50 hover:bg-teal-50 rounded-xl border border-gray-200 text-gray-700 hover:text-teal-600 transition-all duration-300 focus:outline-none shadow-sm flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-bag-shopping text-lg transition-transform group-hover:scale-110"></i>
-                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] min-w-[16px] h-16 px-1 rounded-full flex items-center justify-center font-extrabold border border-white shadow-md transition-all duration-300 scale-0">0</span>
+                <button id="cart-toggle-btn" class="cart-ripple group relative h-9 w-9 sm:h-10 sm:w-10 bg-gray-50 hover:bg-teal-50 rounded-xl border border-gray-200 text-gray-700 hover:text-teal-600 transition-all duration-300 focus:outline-none shadow-sm flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-bag-shopping text-base sm:text-lg transition-transform group-hover:scale-110"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] sm:text-[10px] min-w-[16px] sm:min-w-[18px] h-4 sm:h-4.5 px-1 rounded-full flex items-center justify-center font-extrabold border border-white shadow-md transition-all duration-300 scale-0">0</span>
                 </button>
 
-                <div class="relative inline-block text-left h-full" id="country-clock-wrapper">
-                    <button id="country-clock-btn" class="flex items-center justify-center space-x-1.5 h-full bg-gray-950 hover:bg-gray-800 text-white px-2.5 sm:px-3.5 rounded-xl border border-gray-800 transition font-medium focus:outline-none text-xs shadow-sm shrink-0">
-                        <span id="selected-clock-icon" class="text-sm">🇻🇳</span>
-                        <span id="selected-clock-name" class="hidden xs:inline max-w-[60px] sm:max-w-none truncate">Việt Nam</span>
-                        <span id="selected-clock-time" class="text-teal-400 font-mono font-bold tracking-tight">00:00:00</span>
-                        <i class="fa-solid fa-chevron-down text-[9px] text-gray-400 opacity-80"></i>
+                <div class="relative inline-block text-left h-9 sm:h-10" id="country-clock-wrapper">
+                    <button id="country-clock-btn" class="flex items-center justify-center space-x-1 sm:space-x-1.5 h-full bg-white hover:bg-gray-50 text-gray-700 px-2 sm:px-3.5 rounded-xl border border-gray-200 transition font-medium focus:outline-none text-[11px] sm:text-xs shadow-sm shrink-0">
+                        <span id="selected-clock-icon" class="text-sm sm:text-base">🇻🇳</span>
+                        <span id="selected-clock-name" class="hidden md:inline max-w-[60px] truncate">Việt Nam</span>
+                        <span id="selected-clock-time" class="text-[#001F3F] font-mono font-bold tracking-tight text-[11px] sm:text-xs">00:00:00</span>
+                        <i class="fa-solid fa-chevron-down text-[8px] sm:text-[9px] text-gray-400 opacity-80"></i>
                     </button>
     
-                    <div id="country-clock-menu" class="absolute right-0 mt-2 w-44 sm:w-48 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 pointer-events-none transition-all duration-200 z-50 py-1 max-h-64 overflow-y-auto origin-top-right">
-                        <button onclick="changeActiveClock('Asia/Ho_Chi_Minh', '🇻🇳', 'Việt Nam')" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs">
+                    <div id="country-clock-menu" class="absolute right-0 mt-2 w-40 sm:w-48 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 pointer-events-none transition-all duration-200 z-50 py-1 max-h-64 overflow-y-auto origin-top-right">
+                        <button onclick="changeActiveClock('Asia/Ho_Chi_Minh', '🇻🇳', 'Việt Nam')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
                             <span class="flex items-center space-x-2"><span>🇻🇳</span> <span>Việt Nam</span></span>
                             <span class="font-mono text-gray-400" id="preview-Asia-Ho_Chi_Minh">00:00</span>
                         </button>
-                        <button onclick="changeActiveClock('America/New_York', '🇺🇸', 'English')" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs">
+                        <button onclick="changeActiveClock('America/New_York', '🇺🇸', 'English')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
                             <span class="flex items-center space-x-2"><span>🇺🇸</span> <span>English</span></span>
                             <span class="font-mono text-gray-400" id="preview-America-New_York">00:00</span>
                         </button>
-                        <button onclick="changeActiveClock('Europe/Paris', '🇫🇷', 'Français')" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs">
+                        <button onclick="changeActiveClock('Europe/Paris', '🇫🇷', 'Français')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
                             <span class="flex items-center space-x-2"><span>🇫🇷</span> <span>Français</span></span>
                             <span class="font-mono text-gray-400" id="preview-Europe-Paris">00:00</span>
                         </button>
-                        <button onclick="changeActiveClock('Asia/Tokyo', '🇯🇵', '日本語')" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs">
+                        <button onclick="changeActiveClock('Asia/Tokyo', '🇯🇵', '日本語')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
                             <span class="flex items-center space-x-2"><span>🇯🇵</span> <span>日本語</span></span>
                             <span class="font-mono text-gray-400" id="preview-Asia-Tokyo">00:00</span>
                         </button>
-                        <button onclick="changeActiveClock('Asia/Seoul', '🇰🇷', '한국어')" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs">
+                        <button onclick="changeActiveClock('Asia/Seoul', '🇰🇷', '한국어')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
                             <span class="flex items-center space-x-2"><span>🇰🇷</span> <span>한국어</span></span>
                             <span class="font-mono text-gray-400" id="preview-Asia-Seoul">00:00</span>
                         </button>
-                        <button onclick="changeActiveClock('Asia/Shanghai', '🇨🇳', '中文')" class="w-full flex items-center justify-between px-3.5 py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs">
+                        <button onclick="changeActiveClock('Asia/Shanghai', '🇨🇳', '中文')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
                             <span class="flex items-center space-x-2"><span>🇨🇳</span> <span>中文</span></span>
                             <span class="font-mono text-gray-400" id="preview-Asia-Shanghai">00:00</span>
                         </button>
@@ -119,9 +119,9 @@
         </div>
     </header>
 
-    <section class="bg-gradient-to-br from-slate-950 via-teal-950 to-emerald-950 text-white py-16 sm:py-24 px-4 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-25 pointer-events-none flex items-center justify-center">
-            <svg class="w-[280px] h-[280px] sm:w-[480px] sm:h-[480px] text-yellow-500/40 animate-[spin_60s_linear_infinite]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <section class="bg-gradient-to-br from-slate-950 via-teal-950 to-emerald-950 text-white py-16 sm:py-24 px-4 text-center relative overflow-hidden w-full">
+        <div class="absolute inset-0 opacity-25 pointer-events-none flex items-center justify-center overflow-hidden">
+            <svg class="w-[260px] h-[260px] sm:w-[480px] sm:h-[480px] text-yellow-500/40 animate-[spin_60s_linear_infinite]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
                         <feGaussianBlur stdDeviation="2" result="blur" />
@@ -160,10 +160,10 @@
             <span class="bg-emerald-500/10 backdrop-blur-md border border-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-semibold px-3 py-1 sm:py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-2">
                 <span data-i18n="hero_badge">☯️ Tuyệt Tác Song Ngư Hội Tụ 2026</span>
             </span>
-            <h1 class="text-2xl sm:text-5xl font-serif font-bold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-teal-100 to-emerald-200" data-i18n="hero_title">
+            <h1 class="text-2xl sm:text-5xl font-serif font-bold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-teal-100 to-emerald-200" data-i18b="hero_title">
                 Vòng Tuần Hoàn Của Thịnh Vượng & Bình Yên
             </h1>
-            <p class="text-teal-100/80 text-xs sm:text-base max-w-xl mx-auto font-light leading-relaxed" data-i18n="hero_desc">
+            <p class="text-teal-100/80 text-xs sm:text-base max-w-xl mx-auto font-light leading-relaxed px-2" data-i18n="hero_desc">
                 Nơi cặp cá chép Koi uốn lượn thướt tha tạo thành biểu tượng Song Ngư hoàn mỹ, mang lại dòng chảy năng lượng cân bằng, may mắn và tài lộc vĩnh cửu.
             </p>
             <div class="pt-2">
@@ -183,7 +183,7 @@
             <div id="page-indicator" class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-1.5 rounded-md"></div>
         </div>
 
-        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:grid-cols-3 lg:gap-8 min-h-[500px] transition-all duration-300"></div>
+        <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 min-h-[500px] transition-all duration-300"></div>
 
         <div class="flex justify-center items-center space-x-2 mt-10 sm:mt-12">
             <button id="prev-btn" class="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition disabled:opacity-40 disabled:cursor-not-allowed" data-i18n="btn_prev">
@@ -196,7 +196,7 @@
         </div>
     </main>
 
-    <section id="contact-section" class="bg-gray-50 border-t border-gray-200 py-8 sm:py-10 px-4">
+    <section id="contact-section" class="bg-gray-50 border-t border-gray-200 py-8 sm:py-10 px-4 w-full">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="space-y-4 sm:space-y-5 flex flex-col justify-between">
                 <div>
@@ -240,13 +240,13 @@
                                 <span class="text-gray-500 font-medium" data-i18n="payment_bank">Ngân hàng:</span>
                                 <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">TPBANK (TPB)</span>
                             </div>
-                            <div class="flex flex-col xs:flex-row xs:justify-between xs:items-center py-1 border-b border-gray-100 gap-1">
+                            <div class="flex justify-between items-center py-1 border-b border-gray-100 gap-1">
                                 <span class="text-gray-500 font-medium shrink-0" data-i18n="payment_acc_num">Số tài khoản:</span>
-                                <div class="flex items-center space-x-2 max-w-full justify-between xs:justify-end w-full xs:w-auto">
+                                <div class="flex items-center space-x-2 justify-end">
                                     <button onclick="copySTK()" class="text-[10px] bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white font-semibold px-2 py-1 rounded border border-teal-200 transition-all active:scale-95 flex items-center gap-1 shrink-0">
                                         <i class="fa-regular fa-copy"></i> <span id="copy-btn-text">Copy</span>
                                     </button>
-                                    <span id="stk-text" class="font-mono font-black text-teal-600 text-base sm:text-lg tracking-normal whitespace-nowrap">02738162203</span>
+                                    <span id="stk-text" class="font-mono font-black text-teal-600 text-sm sm:text-lg tracking-normal whitespace-nowrap">02738162203</span>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center py-1">
@@ -254,8 +254,8 @@
                                 <span class="font-extrabold text-gray-900 uppercase tracking-wide">DANG QUOC DUNG</span>
                             </div>
                         </div>
-                        <div class="w-full h-auto bg-white p-3 sm:p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center overflow-hidden group">
-                            <img src="image/QR CODE.png" alt="Mã QR Thanh Toán" class="max-w-[180px] sm:max-w-[250px] w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105">
+                        <div class="w-full sm:w-auto h-auto bg-white p-3 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center overflow-hidden group">
+                            <img src="image/QR CODE.png" alt="Mã QR Thanh Toán" class="max-w-[140px] sm:max-w-[180px] w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105">
                         </div>
                     </div>
                 </div>
@@ -274,7 +274,7 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 text-[10px] sm:text-xs py-5 border-t border-gray-800 text-center">
+    <footer class="bg-gray-900 text-gray-400 text-[10px] sm:text-xs py-5 border-t border-gray-800 text-center w-full">
         <div class="max-w-7xl mx-auto px-4">
             <p>© Thank You & See You Soon</p>
         </div>
@@ -358,7 +358,7 @@
             { id: 9, name: "Bản đồ quả địa cầu", category: "Phụ kiện", priceNumber: 800000, price: "800.000 đ", image: "image/quadiacau.jpg", badge: "Bán chạy" },
             { id: 10, name: "Vòng tay chỉ ngũ sắc gắn đá phong thủy", category: "Phụ kiện", priceNumber: 320000, price: "320.000 đ", image: "image/vong.jpg", badge: null },
             { id: 11, name: "Vòng tay chỉ ngũ sắc gắn đá phong thủy", category: "Phụ kiện", priceNumber: 320000, price: "320.000 đ", image: "image/vong1.jpg", badge: null },
-            { id: 12, name: "10 hũ coffee hòa tan nước nòng/lạnh", category: "Phụ kiện", priceNumber: 200000, price: "200.000 đ", image: "image/coffee.jpg", badge: null }
+            { id: 12, name: "10 hũ coffee hòa tan nước nóng/lạnh", category: "Phụ kiện", priceNumber: 200000, price: "200.000 đ", image: "image/coffee.jpg", badge: null }
         ];
 
         let cart = [];
