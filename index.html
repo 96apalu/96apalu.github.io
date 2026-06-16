@@ -61,7 +61,7 @@
             
             <a href="#" class="inline-flex items-center gap-1.5 sm:gap-3 h-full shrink-0">
                 <img src="./image/logo.png" alt="Apalu Store Logo" class="h-14 sm:h-16 w-auto object-contain">
-                <span class="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#001F3F] to-blue-700 tracking-wide">
+                <span class="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 tracking-wide to-[#001F3F]">
                     Apalu-Store
                 </span>
             </a>
@@ -133,25 +133,30 @@
             <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] sm:[background-size:24px_24px]"></div>
 
             <!-- KHUNG BIỂU TƯỢNG XOAY CHÍNH TRUNG TÂM (Theo image_85b3de.png) -->
-            <div class="relative w-[290px] h-[290px] sm:w-[500px] sm:h-[500px] flex items-center justify-center animate-[spin_30s_linear_infinite]">
-                
-                <!-- SVG tái hiện chuẩn xác biểu tượng từ ảnh đính kèm với hiệu ứng phát sáng neon sáng trắng -->
-                <svg class="w-full h-full text-white/80 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Vòng cung lớn phía trên bên phải -->
-                    <path d="M 160,100 A 60,60 0 0,0 70,48" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-                    <!-- Vòng cung lớn phía dưới bên trái -->
-                    <path d="M 40,100 A 60,60 0 0,0 130,152" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-                    
-                    <!-- Vòng tròn khép kín bên trái -->
-                    <circle cx="68" cy="74" r="24" stroke="currentColor" stroke-width="4" />
-                    
-                    <!-- Vòng tròn khép kín bên phải -->
-                    <circle cx="132" cy="126" r="24" stroke="currentColor" stroke-width="4" />
-                </svg>
+        <div class="relative w-[290px] h-[290px] sm:w-[500px] sm:h-[500px] flex items-center justify-center animate-[spin_30s_linear_infinite]">
+            
+            <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="neon-glow-cancer" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
 
-                <!-- Quỹ đạo phụ: Vòng chấm sáng bọc nhẹ bên ngoài tạo độ sâu vũ trụ -->
-                <div class="absolute inset-[-15px] rounded-full border border-white/5 border-dashed scale-105 animate-[spin_50s_linear_infinite_reverse]"></div>
-            </div>
+                <g filter="url(#neon-glow-cancer)" stroke="#ffffff" stroke-width="5">
+                    <path d="M 160,100 A 60,60 0 0,0 70,48" stroke-linecap="round" /> 
+                    <path d="M 40,100 A 60,60 0 0,0 130,152" stroke-linecap="round" /> 
+                    
+                    <circle cx="68" cy="74" r="24" />                    
+                    <circle cx="132" cy="126" r="24" /> 
+                </g>
+            </svg>
+
+            <div class="absolute inset-[-15px] rounded-full border border-white/10 border-dashed scale-105 animate-[spin_50s_linear_infinite_reverse]"></div> 
+        </div>
         </div>
 
         <!-- KHỐI NỘI DUNG CHÍNH (Z-10 - Nổi bật trên nền tinh vân) -->
