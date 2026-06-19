@@ -129,34 +129,34 @@
             <div class="absolute w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] rounded-full bg-purple-600/[0.15] blur-[100px] translate-x-12 translate-y-12"></div>
             <div class="absolute w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] rounded-full bg-blue-500/[0.1] blur-[90px]"></div>
 
-            <!-- Các hạt sao nhỏ lấp lánh mô phỏng bầu trời sao tinh vân -->
-            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] sm:[background-size:24px_24px]"></div>
+            <!-- Các hạt sao nhỏ lấp lánh mô phỏng bầu trời sao tinh vân
+            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] sm:[background-size:24px_24px]"></div> -->
 
             <!-- KHUNG BIỂU TƯỢNG XOAY CHÍNH TRUNG TÂM (Theo image_85b3de.png) -->
-        <div class="relative w-[290px] h-[290px] sm:w-[500px] sm:h-[500px] flex items-center justify-center animate-[spin_30s_linear_infinite]">
-            
-            <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="neon-glow-cancer" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
+            <div class="relative w-[290px] h-[290px] sm:w-[500px] sm:h-[500px] flex items-center justify-center animate-[spin_30s_linear_infinite]">
+                
+                <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="neon-glow-cancer" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
 
-                <g filter="url(#neon-glow-cancer)" stroke="#ffffff" stroke-width="5">
-                    <path d="M 160,100 A 60,60 0 0,0 70,48" stroke-linecap="round" /> 
-                    <path d="M 40,100 A 60,60 0 0,0 130,152" stroke-linecap="round" /> 
-                    
-                    <circle cx="68" cy="74" r="24" />                    
-                    <circle cx="132" cy="126" r="24" /> 
-                </g>
-            </svg>
+                    <g filter="url(#neon-glow-cancer)" stroke="#ffffff" stroke-width="5">
+                        <path d="M 160,100 A 60,60 0 0,0 70,48" stroke-linecap="round" /> 
+                        <path d="M 40,100 A 60,60 0 0,0 130,152" stroke-linecap="round" /> 
+                        
+                        <circle cx="68" cy="74" r="24" />                    
+                        <circle cx="132" cy="126" r="24" /> 
+                    </g>
+                </svg>
 
-            <div class="absolute inset-[-15px] rounded-full border border-white/10 border-dashed scale-105 animate-[spin_50s_linear_infinite_reverse]"></div> 
-        </div>
+                <div class="absolute inset-[-15px] rounded-full border border-white/10 border-dashed scale-105 animate-[spin_50s_linear_infinite_reverse]"></div> 
+            </div>
         </div>
 
         <!-- KHỐI NỘI DUNG CHÍNH (Z-10 - Nổi bật trên nền tinh vân) -->
