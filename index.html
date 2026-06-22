@@ -66,11 +66,37 @@
                 </span>
             </a>
                    
-            <nav class="hidden md:flex space-x-8 font-medium text-sm text-gray-600">
-                <a href="#" class="text-teal-600 hover:text-teal-700 transition" data-i18n="nav_home">Trang chủ</a>
-                <a href="#products-section" class="hover:text-teal-600 transition" data-i18n="nav_products">Sản phẩm</a>
-                <a href="#contact-section" class="hover:text-teal-600 transition" data-i18n="nav_contact">Liên hệ</a>
+            <nav id="main-nav" class="hidden md:flex space-x-6 font-medium text-sm text-[#001F3F]">
+                <a href="#" class="nav-item active relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold" data-i18n="nav_home">
+                    Trang chủ
+                    <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#001F3F] transform scale-x-0 group-hover:scale-x-100 group-[.active]:scale-x-100 transition-transform duration-300"></span>
+                </a>
+
+                <a href="#products-section" class="nav-item relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold" data-i18n="nav_products">
+                    Sản phẩm
+                    <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#001F3F] transform scale-x-0 group-hover:scale-x-100 group-[.active]:scale-x-100 transition-transform duration-300"></span>
+                </a>
+
+                <a href="#contact-section" class="nav-item relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold" data-i18n="nav_contact">
+                    Liên hệ
+                    <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#001F3F] transform scale-x-0 group-hover:scale-x-100 group-[.active]:scale-x-100 transition-transform duration-300"></span>
+                </a>
             </nav>
+
+            <script>
+                document.querySelectorAll('#main-nav .nav-item').forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        // 1. Tìm và xóa class 'active' khỏi thẻ đang có nó
+                        const currentActive = document.querySelector('#main-nav .nav-item.active');
+                        if (currentActive) {
+                            currentActive.classList.remove('active');
+                        }
+                        
+                        // 2. Thêm class 'active' vào thẻ vừa được click
+                        this.classList.add('active');
+                    });
+                });
+            </script>
             
             <div class="flex items-center space-x-1.5 sm:space-x-3 h-10 shrink-0">
                 
@@ -277,7 +303,7 @@
 
     <footer class="bg-gray-900 text-gray-400 text-[10px] sm:text-xs py-5 border-t border-gray-800 text-center w-full">
         <div class="max-w-7xl mx-auto px-4">
-            <p>© Thank You & See You Soon !</p>
+            <p>© Thank You & See You Soon ©</p>
         </div>
     </footer>
 
