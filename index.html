@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cửa Hàng Online</title>
+    <title>Cửa Hàng Online - Apalu-Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             top: 0 !important;
-            overflow-x: hidden; /* Ngăn chặn triệt để mọi hành vi tràn ngang vô ý */
+            overflow-x: hidden;
         }
         @keyframes cart-pop {
             0% { transform: scale(1); }
@@ -60,101 +60,61 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
             
             <a href="#" class="inline-flex items-center gap-1.5 sm:gap-3 h-full shrink-0">
-                <img src="./image/logo.png" alt="Apalu Store Logo" class="h-14 sm:h-16 w-auto object-contain">
+                <img src="./image/logo.png" alt="Apalu Store Logo" class="h-14 sm:h-16 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150?text=Apalu'">
                 <span class="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 tracking-wide to-[#001F3F]">
                     Apalu-Store
                 </span>
             </a>
                    
             <nav id="main-nav" class="hidden md:flex space-x-6 font-medium text-sm text-[#001F3F]">
-                <a href="#" class="nav-item active relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold" data-i18n="nav_home">
+                <a href="#" class="nav-item active relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold">
                     Trang chủ
                     <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#001F3F] transform scale-x-0 group-hover:scale-x-100 group-[.active]:scale-x-100 transition-transform duration-300"></span>
                 </a>
 
-                <a href="#products-section" class="nav-item relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold" data-i18n="nav_products">
+                <a href="#products-section" class="nav-item relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold">
                     Sản phẩm
                     <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#001F3F] transform scale-x-0 group-hover:scale-x-100 group-[.active]:scale-x-100 transition-transform duration-300"></span>
                 </a>
 
-                <a href="#contact-section" class="nav-item relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold" data-i18n="nav_contact">
+                <a href="#contact-section" class="nav-item relative group px-3 py-2 inline-block transform hover:-translate-y-0.5 transition-all duration-300 text-[#001F3F]/60 [&.active]:text-[#001F3F] [&.active]:font-bold">
                     Liên hệ
                     <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#001F3F] transform scale-x-0 group-hover:scale-x-100 group-[.active]:scale-x-100 transition-transform duration-300"></span>
                 </a>
             </nav>
-
-            <script>
-                document.querySelectorAll('#main-nav .nav-item').forEach(item => {
-                    item.addEventListener('click', function(e) {
-                        // 1. Tìm và xóa class 'active' khỏi thẻ đang có nó
-                        const currentActive = document.querySelector('#main-nav .nav-item.active');
-                        if (currentActive) {
-                            currentActive.classList.remove('active');
-                        }
-                        
-                        // 2. Thêm class 'active' vào thẻ vừa được click
-                        this.classList.add('active');
-                    });
-                });
-            </script>
             
             <div class="flex items-center space-x-1.5 sm:space-x-3 h-10 shrink-0">
-                
                 <button id="cart-toggle-btn" class="cart-ripple group relative h-9 w-9 sm:h-10 sm:w-10 bg-gray-50 hover:bg-teal-50 rounded-xl border border-gray-200 text-gray-700 hover:text-teal-600 transition-all duration-300 focus:outline-none shadow-sm flex items-center justify-center shrink-0">
                     <i class="fa-solid fa-bag-shopping text-base sm:text-lg transition-transform group-hover:scale-110"></i>
                     <span id="cart-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] sm:text-[10px] min-w-[16px] sm:min-w-[18px] h-4 sm:h-4.5 px-1 rounded-full flex items-center justify-center font-extrabold border border-white shadow-md transition-all duration-300 scale-0">0</span>
                 </button>
 
+                <!-- Đồng hồ & Danh sách quốc gia -->
                 <div class="relative inline-block text-left h-9 sm:h-10" id="country-clock-wrapper">
                     <button id="country-clock-btn" class="flex items-center justify-center space-x-1 sm:space-x-1.5 h-full bg-white hover:bg-gray-50 text-gray-700 px-2 sm:px-3.5 rounded-xl border border-gray-200 transition font-medium focus:outline-none text-[11px] sm:text-xs shadow-sm shrink-0">
                         <span id="selected-clock-icon" class="text-sm sm:text-base">🇻🇳</span>
-                        <span id="selected-clock-name" class="hidden md:inline max-w-[60px] truncate">Việt Nam</span>
+                        <span id="selected-clock-name" class="hidden md:inline max-w-[90px] truncate">Việt Nam</span>
                         <span id="selected-clock-time" class="text-[#001F3F] font-mono font-bold tracking-tight text-[11px] sm:text-xs">00:00:00</span>
                         <i class="fa-solid fa-chevron-down text-[8px] sm:text-[9px] text-gray-400 opacity-80"></i>
                     </button>
     
-                    <div id="country-clock-menu" class="absolute right-0 mt-2 w-40 sm:w-48 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 pointer-events-none transition-all duration-200 z-50 py-1 max-h-64 overflow-y-auto origin-top-right">
-                        <button onclick="changeActiveClock('Asia/Ho_Chi_Minh', '🇻🇳', 'Việt Nam')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
-                            <span class="flex items-center space-x-2"><span>🇻🇳</span> <span>Việt Nam</span></span>
-                            <span class="font-mono text-gray-400" id="preview-Asia-Ho_Chi_Minh">00:00</span>
-                        </button>
-                        <button onclick="changeActiveClock('America/New_York', '🇺🇸', 'English')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
-                            <span class="flex items-center space-x-2"><span>🇺🇸</span> <span>English</span></span>
-                            <span class="font-mono text-gray-400" id="preview-America-New_York">00:00</span>
-                        </button>
-                        <button onclick="changeActiveClock('Europe/Paris', '🇫🇷', 'Français')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
-                            <span class="flex items-center space-x-2"><span>🇫🇷</span> <span>Français</span></span>
-                            <span class="font-mono text-gray-400" id="preview-Europe-Paris">00:00</span>
-                        </button>
-                        <button onclick="changeActiveClock('Asia/Tokyo', '🇯🇵', '日本語')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
-                            <span class="flex items-center space-x-2"><span>🇯🇵</span> <span>日本語</span></span>
-                            <span class="font-mono text-gray-400" id="preview-Asia-Tokyo">00:00</span>
-                        </button>
-                        <button onclick="changeActiveClock('Asia/Seoul', '🇰🇷', '한국어')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
-                            <span class="flex items-center space-x-2"><span>🇰🇷</span> <span>한국어</span></span>
-                            <span class="font-mono text-gray-400" id="preview-Asia-Seoul">00:00</span>
-                        </button>
-                        <button onclick="changeActiveClock('Asia/Shanghai', '🇨🇳', '中文')" class="w-full flex items-center justify-between px-3 py-2 sm:py-2.5 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-[11px] sm:text-xs">
-                            <span class="flex items-center space-x-2"><span>🇨🇳</span> <span>中文</span></span>
-                            <span class="font-mono text-gray-400" id="preview-Asia-Shanghai">00:00</span>
-                        </button>
+                    <div id="country-clock-menu" class="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 pointer-events-none transition-all duration-200 z-50 py-2 origin-top-right">
+                        <div class="px-3 pb-2 border-b border-gray-100">
+                            <input type="text" id="country-search-input" placeholder="Tìm kiếm quốc gia..." class="w-full px-2.5 py-1.5 text-xs bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-teal-500 font-medium text-gray-800">
+                        </div>
+                        <div id="country-clock-list" class="max-h-64 overflow-y-auto py-1"></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </header>
 
     <section class="bg-[#2e1d4d] bg-cover bg-center bg-no-repeat text-white py-16 sm:py-28 px-4 text-center relative overflow-hidden w-full flex flex-col items-center justify-center min-h-[580px] sm:min-h-[700px]"
                 style="background-image: url('image/background.jpeg');">
-            
             <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
                 <div class="absolute inset-0 bg-indigo-950/20 mix-blend-multiply"></div>
-
                 <div class="absolute w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] rounded-full bg-pink-400/[0.1] blur-[100px]"></div>
-
                 <div class="relative w-[290px] h-[290px] sm:w-[500px] sm:h-[500px] flex items-center justify-center animate-[spin_30s_linear_infinite]">
-                    
                     <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <filter id="neon-glow-cancer" x="-50%" y="-50%" width="200%" height="200%">
@@ -165,32 +125,28 @@
                                 </feMerge>
                             </filter>
                         </defs>
-
                         <g filter="url(#neon-glow-cancer)" stroke="#ffffff" stroke-width="5">
                             <path d="M 160,100 A 60,60 0 0,0 70,48" stroke-linecap="round" /> 
                             <path d="M 40,100 A 60,60 0 0,0 130,152" stroke-linecap="round" /> 
-                            
                             <circle cx="68" cy="74" r="24" />                    
                             <circle cx="132" cy="126" r="24" /> 
                         </g>
                     </svg>
-
                     <div class="absolute inset-[-15px] rounded-full border border-white/10 border-dashed scale-105 animate-[spin_50s_linear_infinite_reverse]"></div> 
                 </div>
             </div>
 
             <div class="max-w-3xl mx-auto relative z-10 flex flex-col items-center space-y-6 sm:space-y-8">
-
-                <span class="bg-purple-500/20 backdrop-blur-md border border-purple-400/30 text-purple-100 text-xs sm:text-sm md:text-base font-semibold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full uppercase tracking-widest inline-flex items-center gap-2 shadow-sm">
-                    <span data-i18n="hero_badge">Bộ Sưu Tập 2026</span>
+                <span class="bg-purple-500/25 backdrop-blur-md border border-purple-400/30 text-purple-100 text-xs sm:text-sm md:text-base font-semibold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full uppercase tracking-widest inline-flex items-center gap-2 shadow-sm">
+                    <span>Bộ Sưu Tập 2026</span>
                 </span>
                 
-                <h1 class="text-2xl sm:text-5xl font-serif font-bold tracking-tight leading-tight px-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-pink-100 to-purple-200" data-i18b="hero_title">
+                <h1 class="text-2xl sm:text-5xl font-serif font-bold tracking-tight leading-tight px-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-pink-100 to-purple-200">
                     Trải nghiệm mua sắm Online tại Apalu-Store
                 </h1>
                 
                 <div class="pt-2">
-                    <a href="#products-section" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-extrabold text-xs sm:text-sm px-8 sm:px-12 py-3.5 sm:py-4 rounded-full shadow-lg shadow-purple-950/40 hover:from-pink-400 hover:to-indigo-400 transition duration-300 inline-block transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide" data-i18n="hero_btn">
+                    <a href="#products-section" class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-extrabold text-xs sm:text-sm px-8 sm:px-12 py-3.5 sm:py-4 rounded-full shadow-lg shadow-purple-950/40 hover:from-pink-400 hover:to-indigo-400 transition duration-300 inline-block transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide">
                         Mua Hàng Ngay 🌊
                     </a>
                 </div>
@@ -204,8 +160,8 @@
     <main id="products-section" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-3 border-b border-gray-200 pb-5">
             <div>
-                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight" data-i18n="section_title">Sản Phẩm Nổi Bật</h2>
-                <p class="text-xs sm:text-sm text-gray-500 mt-0.5" data-i18n="section_desc">Hiển thị 6 sản phẩm mỗi trang trên tổng số 30 sản phẩm</p>
+                <h2 class="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">Sản Phẩm Nổi Bật</h2>
+                <p class="text-xs sm:text-sm text-gray-500 mt-0.5">Hiển thị 6 sản phẩm mỗi trang trên tổng số 12 sản phẩm</p>
             </div>
             <div id="page-indicator" class="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-1.5 rounded-md"></div>
         </div>
@@ -213,11 +169,11 @@
         <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 min-h-[500px] transition-all duration-300"></div>
 
         <div class="flex justify-center items-center space-x-2 mt-10 sm:mt-12">
-            <button id="prev-btn" class="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition disabled:opacity-40 disabled:cursor-not-allowed" data-i18n="btn_prev">
+            <button id="prev-btn" class="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition disabled:opacity-40 disabled:cursor-not-allowed">
                 <i class="fa-solid fa-chevron-left mr-1"></i> Trước
             </button>
             <div id="pagination-numbers" class="flex space-x-1"></div>
-            <button id="next-btn" class="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition disabled:opacity-40 disabled:cursor-not-allowed" data-i18n="btn_next">
+            <button id="next-btn" class="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition disabled:opacity-40 disabled:cursor-not-allowed">
                 Sau <i class="fa-solid fa-chevron-right ml-1"></i>
             </button>
         </div>
@@ -227,8 +183,8 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="space-y-4 sm:space-y-5 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-base sm:text-xl font-extrabold text-gray-900 tracking-tight mb-1.5" data-i18n="contact_title">Thông Tin Liên Hệ & Thanh Toán</h2>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed" data-i18n="contact_desc">Gặp bất cứ khó khăn nào? Hãy liên hệ trực tiếp với chúng tôi theo thông tin chi tiết bên dưới:</p>
+                    <h2 class="text-base sm:text-xl font-extrabold text-gray-900 tracking-tight mb-1.5">Thông Tin Liên Hệ & Thanh Toán</h2>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Gặp bất cứ khó khăn nào? Hãy liên hệ trực tiếp với chúng tôi theo thông tin chi tiết bên dưới:</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -237,8 +193,8 @@
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div class="min-w-0">
-                            <h4 class="font-bold text-xs text-gray-500 tracking-tight" data-i18n="contact_address_title">Địa chỉ cửa hàng</h4>
-                            <p class="text-xs sm:text-sm text-gray-900 font-bold mt-0.5 truncate xs:whitespace-normal" data-i18n="contact_address_detail">21 Lê Văn Lương, Thanh Xuân, HN</p>
+                            <h4 class="font-bold text-xs text-gray-500 tracking-tight">Địa chỉ cửa hàng</h4>
+                            <p class="text-xs sm:text-sm text-gray-900 font-bold mt-0.5 truncate">21 Lê Văn Lương, Thanh Xuân, HN</p>
                         </div>
                     </div>
 
@@ -247,7 +203,7 @@
                             <i class="fa-solid fa-comments"></i>
                         </div>
                         <div class="min-w-0">
-                            <h4 class="font-bold text-xs text-gray-500 tracking-tight" data-i18n="contact_zalo">Tư vấn Zalo 24/7</h4>
+                            <h4 class="font-bold text-xs text-gray-500 tracking-tight">Tư vấn Zalo 24/7</h4>
                             <p class="text-sm sm:text-base mt-0.5 font-mono">
                                 <a href="https://zalo.me/0942135506" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:text-teal-700 hover:underline font-black tracking-wide">0942 135 506</a>
                             </p>
@@ -257,18 +213,18 @@
 
                 <div class="p-4 bg-white rounded-xl border-2 border-teal-600/20 shadow-sm relative overflow-hidden bg-gradient-to-br from-white to-teal-50/10">
                     <div class="absolute top-0 left-0 w-1.5 h-full bg-teal-600"></div>
-                    <h4 class="font-bold text-xs sm:text-sm text-teal-800 uppercase tracking-wider mb-3 flex items-center whitespace-nowrap" data-i18n="payment_title">
+                    <h4 class="font-bold text-xs sm:text-sm text-teal-800 uppercase tracking-wider mb-3 flex items-center whitespace-nowrap">
                         <i class="fa-solid fa-credit-card mr-2 text-xs shrink-0"></i>Thông Tin Thanh Toán Chuyển Khoản
                     </h4>
                     
                     <div class="flex flex-col sm:flex-row gap-4 items-center">
                         <div class="flex-grow space-y-2.5 w-full text-xs sm:text-sm">
                             <div class="flex justify-between items-center py-1 border-b border-gray-100">
-                                <span class="text-gray-500 font-medium" data-i18n="payment_bank">Ngân hàng:</span>
+                                <span class="text-gray-500 font-medium">Ngân hàng:</span>
                                 <span class="font-bold text-gray-900 bg-gray-100 px-2 py-0.5 rounded">TPBANK (TPB)</span>
                             </div>
                             <div class="flex justify-between items-center py-1 border-b border-gray-100 gap-1">
-                                <span class="text-gray-500 font-medium shrink-0" data-i18n="payment_acc_num">Số tài khoản:</span>
+                                <span class="text-gray-500 font-medium shrink-0">Số tài khoản:</span>
                                 <div class="flex items-center space-x-2 justify-end">
                                     <button onclick="copySTK()" class="text-[10px] bg-teal-50 text-teal-600 hover:bg-teal-600 hover:text-white font-semibold px-2 py-1 rounded border border-teal-200 transition-all active:scale-95 flex items-center gap-1 shrink-0">
                                         <i class="fa-regular fa-copy"></i> <span id="copy-btn-text">Copy</span>
@@ -277,12 +233,12 @@
                                 </div>
                             </div>
                             <div class="flex justify-between items-center py-1">
-                                <span class="text-gray-500 font-medium" data-i18n="payment_acc_holder">Chủ tài khoản:</span>
+                                <span class="text-gray-500 font-medium">Chủ tài khoản:</span>
                                 <span class="font-extrabold text-gray-900 uppercase tracking-wide">DANG QUOC DUNG</span>
                             </div>
                         </div>
                         <div class="w-full sm:w-auto h-auto bg-white p-3 rounded-xl border border-gray-200 shadow-sm flex flex-col items-center justify-center overflow-hidden group">
-                            <img src="image/QR CODE.png" alt="Mã QR Thanh Toán" class="max-w-[140px] sm:max-w-[180px] w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105">
+                            <img src="image/QR CODE.png" alt="Mã QR Thanh Toán" class="max-w-[140px] sm:max-w-[180px] w-full h-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/150?text=QR+Code'">
                         </div>
                     </div>
                 </div>
@@ -292,7 +248,7 @@
                 <form id="map-search-form" class="flex items-center bg-white border border-gray-300 rounded-xl p-1 shadow-sm focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-500/10 transition-all duration-300">
                     <div class="pl-2.5 text-gray-400 text-xs sm:text-sm"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <input type="text" id="map-search-input" placeholder="Tìm kiếm vị trí trên bản đồ..." value="21 Lê Văn Lương, Thanh Xuân, Hà Nội" class="w-full pl-1.5 pr-2 py-1.5 text-xs bg-transparent border-0 focus:outline-none text-gray-800 font-medium">
-                    <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold text-[11px] sm:text-xs px-3 sm:px-4 py-1.5 rounded-lg transition shadow-sm shrink-0" data-i18n="map_btn">Tìm kiếm</button>
+                    <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold text-[11px] sm:text-xs px-3 sm:px-4 py-1.5 rounded-lg transition shadow-sm shrink-0">Tìm kiếm</button>
                 </form>
                 <div class="flex-grow rounded-xl overflow-hidden shadow-sm border border-gray-200 relative min-h-[220px]">
                     <iframe id="google-map-iframe" src="https://maps.google.com/maps?q=21%20L%C3%AA%20V%C4%83n%20L%C6%B0%C6%A1ng,%20Thanh%20Xu%C3%A2n,%20H%C3%A0%20N%E1%BB%99i&t=&z=15&ie=UTF8&iwloc=&output=embed" class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
@@ -310,16 +266,16 @@
     <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex justify-end opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col translate-x-full transition-transform duration-300" id="cart-modal-content">
             <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
-                <h3 class="text-base sm:text-lg font-bold text-gray-900 flex items-center" data-i18n="cart_title"><i class="fa-solid fa-bag-shopping mr-2 text-teal-600"></i> Giỏ Hàng Của Bạn</h3>
+                <h3 class="text-base sm:text-lg font-bold text-gray-900 flex items-center"><i class="fa-solid fa-bag-shopping mr-2 text-teal-600"></i> Giỏ Hàng Của Bạn</h3>
                 <button id="cart-close-btn" class="text-gray-400 hover:text-gray-600 p-1 rounded-lg text-lg"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div id="cart-items-list" class="flex-grow p-4 overflow-y-auto space-y-4"></div>
             <div class="p-4 border-t border-gray-200 bg-gray-50 space-y-3">
                 <div class="flex justify-between items-center text-xs sm:text-sm font-semibold text-gray-900">
-                    <span data-i18n="cart_total_text">Tổng tiền thanh toán:</span>
+                    <span>Tổng tiền thanh toán:</span>
                     <span id="cart-total-price" class="text-teal-600 text-base sm:text-lg font-extrabold">0 đ</span>
                 </div>
-                <button id="checkout-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2.5 sm:py-3 rounded-xl shadow-lg transition flex items-center justify-center space-x-2 text-xs sm:text-sm" data-i18n="cart_checkout_btn">
+                <button id="checkout-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2.5 sm:py-3 rounded-xl shadow-lg transition flex items-center justify-center space-x-2 text-xs sm:text-sm">
                     <i class="fa-solid fa-paper-plane"></i>
                     <span>Gửi Đơn Hàng Qua Zalo</span>
                 </button>
@@ -327,24 +283,66 @@
         </div>
     </div>
 
-    <script src="languages.js"></script>
     <script>
+        const countriesList = [
+            { name: "Afghanistan", flag: "🇦🇫", tz: "Asia/Kabul" },
+            { name: "Ai Cập", flag: "🇪🇬", tz: "Africa/Cairo" },
+            { name: "Albania", flag: "🇦🇱", tz: "Europe/Tirane" },
+            { name: "Algérie", flag: "🇩🇿", tz: "Africa/Algiers" },
+            { name: "Anh", flag: "🇬🇧", tz: "Europe/London" },
+            { name: "Ả Rập Xê Út", flag: "🇸🇦", tz: "Asia/Riyadh" },
+            { name: "Argentina", flag: "🇦🇷", tz: "America/Argentina/Buenos_Aires" },
+            { name: "Úc (Sydney)", flag: "🇦🇺", tz: "Australia/Sydney" },
+            { name: "Áo", flag: "🇦🇹", tz: "Europe/Vienna" },
+            { name: "Ấn Độ", flag: "🇮🇳", tz: "Asia/Kolkata" },
+            { name: "Bỉ", flag: "🇧🇪", tz: "Europe/Brussels" },
+            { name: "Brazil", flag: "🇧🇷", tz: "America/Sao_Paulo" },
+            { name: "Canada (Toronto)", flag: "🇨🇦", tz: "America/Toronto" },
+            { name: "Trung Quốc", flag: "🇨🇳", tz: "Asia/Shanghai" },
+            { name: "Cộng hòa Séc", flag: "🇨🇿", tz: "Europe/Prague" },
+            { name: "Đan Mạch", flag: "🇩🇰", tz: "Europe/Copenhagen" },
+            { name: "Pháp", flag: "🇫🇷", tz: "Europe/Paris" },
+            { name: "Đức", flag: "🇩🇪", tz: "Europe/Berlin" },
+            { name: "Hy Lạp", flag: "🇬🇷", tz: "Europe/Athens" },
+            { name: "Hong Kong", flag: "🇭🇰", tz: "Asia/Hong_Kong" },
+            { name: "Hungary", flag: "🇭🇺", tz: "Europe/Budapest" },
+            { name: "Indonesia", flag: "🇮🇩", tz: "Asia/Jakarta" },
+            { name: "Ireland", flag: "🇮🇪", tz: "Europe/Dublin" },
+            { name: "Israel", flag: "🇮🇱", tz: "Asia/Jerusalem" },
+            { name: "Ý", flag: "🇮🇹", tz: "Europe/Rome" },
+            { name: "Nhật Bản", flag: "🇯🇵", tz: "Asia/Tokyo" },
+            { name: "Hàn Quốc", flag: "🇰🇷", tz: "Asia/Seoul" },
+            { name: "Lào", flag: "🇱🇦", tz: "Asia/Vientiane" },
+            { name: "Malaysia", flag: "🇲🇾", tz: "Asia/Kuala_Lumpur" },
+            { name: "Hà Lan", flag: "🇳🇱", tz: "Europe/Amsterdam" },
+            { name: "New Zealand", flag: "🇳🇿", tz: "Pacific/Auckland" },
+            { name: "Na Uy", flag: "🇳🇴", tz: "Europe/Oslo" },
+            { name: "Philippines", flag: "🇵🇭", tz: "Asia/Manila" },
+            { name: "Ba Lan", flag: "🇵🇱", tz: "Europe/Warsaw" },
+            { name: "Bồ Đào Nha", flag: "🇵🇹", tz: "Europe/Lisbon" },
+            { name: "Nga (Moscow)", flag: "🇷🇺", tz: "Europe/Moscow" },
+            { name: "Singapore", flag: "🇸🇬", tz: "Asia/Singapore" },
+            { name: "Tây Ban Nha", flag: "🇪🇸", tz: "Europe/Madrid" },
+            { name: "Thụy Điển", flag: "🇸🇪", tz: "Europe/Stockholm" },
+            { name: "Thụy Sĩ", flag: "🇨🇭", tz: "Europe/Zurich" },
+            { name: "Đài Loan", flag: "🇹🇼", tz: "Asia/Taipei" },
+            { name: "Thái Lan", flag: "🇹🇭", tz: "Asia/Bangkok" },
+            { name: "Thổ Nhĩ Kỳ", flag: "🇹🇷", tz: "Europe/Istanbul" },
+            { name: "UAE", flag: "🇦🇪", tz: "Asia/Dubai" },
+            { name: "Anh Quốc", flag: "🇬🇧", tz: "Europe/London" },
+            { name: "Mỹ (New York)", flag: "🇺🇸", tz: "America/New_York" },
+            { name: "Việt Nam", flag: "🇻🇳", tz: "Asia/Ho_Chi_Minh" }
+        ];
+
+        let activeTimezone = 'Asia/Ho_Chi_Minh';
+
         const clockBtn = document.getElementById('country-clock-btn');
         const clockMenu = document.getElementById('country-clock-menu');
         const selectedClockIcon = document.getElementById('selected-clock-icon');
         const selectedClockName = document.getElementById('selected-clock-name');
         const selectedClockTime = document.getElementById('selected-clock-time');
-
-        let activeTimezone = 'Asia/Ho_Chi_Minh'; 
-
-        const timezoneToLangMap = {
-            'Asia/Ho_Chi_Minh': 'vi', 
-            'America/New_York': 'en', 
-            'Europe/Paris': 'fr',     
-            'Asia/Tokyo': 'ja',       
-            'Asia/Seoul': 'ko',       
-            'Asia/Shanghai': 'zh'  
-        };
+        const countrySearchInput = document.getElementById('country-search-input');
+        const countryClockList = document.getElementById('country-clock-list');
 
         clockBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -359,33 +357,54 @@
             }
         });
 
-        function changeActiveClock(timezone, icon, name) {
-            activeTimezone = timezone;
-            selectedClockIcon.innerHTML = icon;
-            selectedClockName.innerText = name;
-            updateClocks();
+        function renderCountryList(filter = '') {
+            countryClockList.innerHTML = '';
+            const filtered = countriesList.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()));
             
-            const targetLang = timezoneToLangMap[timezone] || 'vi';
-            localStorage.setItem('selectedLanguage', targetLang);
-            updateContent(targetLang);
+            if (filtered.length === 0) {
+                countryClockList.innerHTML = `<div class="px-3 py-2 text-xs text-gray-400 text-center">Không tìm thấy quốc gia</div>`;
+                return;
+            }
 
-            clockMenu.classList.add('opacity-0');
-            clockMenu.classList.add('pointer-events-none');
+            filtered.forEach(c => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = "w-full flex items-center justify-between px-3 py-2 text-gray-700 hover:bg-teal-50 hover:text-teal-600 text-left transition text-xs";
+                const safeId = 'time-prev-' + c.tz.replace(/[\/]/g, '-');
+                btn.innerHTML = `
+                    <span class="flex items-center space-x-2 truncate"><span class="text-base">${c.flag}</span> <span class="truncate font-medium">${c.name}</span></span>
+                    <span class="font-mono text-gray-400 text-[11px] shrink-0" id="${safeId}">00:00</span>
+                `;
+                btn.onclick = () => {
+                    activeTimezone = c.tz;
+                    selectedClockIcon.innerHTML = c.flag;
+                    selectedClockName.innerText = c.name;
+                    updateClocks();
+                    clockMenu.classList.add('opacity-0');
+                    clockMenu.classList.add('pointer-events-none');
+                };
+                countryClockList.appendChild(btn);
+            });
+            updateClocks();
         }
+
+        countrySearchInput.addEventListener('input', (e) => {
+            renderCountryList(e.target.value);
+        });
 
         const products = [
             { id: 1, name: "Áo thun thêu sao vàng", category: "Thời trang", priceNumber: 350000, price: "350.000 đ", image: "image/aovietnam.jpg", badge: "Bán chạy" },
             { id: 2, name: "Áo polo thêu hình lân", category: "Thời trang", priceNumber: 450000, price: "450.000 đ", image: "image/vong.jpg", badge: "Mới" },
             { id: 3, name: "Áo polo thể thao", category: "Thời trang", priceNumber: 350000, price: "350.000 đ", image: "image/vong1.jpg", badge: "Mới" },
             { id: 4, name: "Quần áo dài thể thao", category: "Thời trang", priceNumber: 1000000, price: "1.000.000 đ", image: "", badge: "Mới" },
-            { id: 5, name: "Thảm tập Yoga", category: "Dụng cụ thể thao", priceNumber: 320000, price: "320.000 đ", image: "", badge: null },
-            { id: 6, name: "Bộ dụng cụ trị liệu cơ bắp ( 5 món )", category: "Dụng cụ thể thao - Chăm sóc sức khỏe", priceNumber: 5000000, price: "5.000.000 đ", image: "", badge: null },
-            { id: 7, name: "Túi đựng thể thao", category: "Dụng cụ thể thao", priceNumber: 250000, price: "250.000 đ", image: "", badge: null },
+            { id: 5, name: "Thảm tập Yoga cao cấp", category: "Dụng cụ thể thao", priceNumber: 320000, price: "320.000 đ", image: "", badge: null },
+            { id: 6, name: "Bộ dụng cụ trị liệu cơ bắp ( 5 món )", category: "Chăm sóc sức khỏe", priceNumber: 5000000, price: "5.000.000 đ", image: "", badge: null },
+            { id: 7, name: "Túi đựng thể thao đa năng", category: "Dụng cụ thể thao", priceNumber: 250000, price: "250.000 đ", image: "", badge: null },
             { id: 8, name: "Charm/Nhẫn bạc cạo gió", category: "Phụ kiện", priceNumber: 5500000, price: "5.500.000 đ", image: "", badge: "Mới" },
-            { id: 9, name: "Bản đồ quả địa cầu", category: "Phụ kiện", priceNumber: 800000, price: "800.000 đ", image: "", badge: "Bán chạy" },
-            { id: 10, name: "Vòng tay chỉ ngũ sắc gắn đá phong thủy", category: "Phụ kiện", priceNumber: 320000, price: "320.000 đ", image: "", badge: null },
-            { id: 11, name: "Vòng tay chỉ ngũ sắc gắn đá phong thủy", category: "Phụ kiện", priceNumber: 320000, price: "320.000 đ", image: "", badge: null },
-            { id: 12, name: "10 hũ coffee hòa tan nước nóng/lạnh", category: "Phụ kiện", priceNumber: 200000, price: "200.000 đ", image: "", badge: null }
+            { id: 9, name: "Bản đồ quả địa cầu để bàn", category: "Phụ kiện", priceNumber: 800000, price: "800.000 đ", image: "", badge: "Bán chạy" },
+            { id: 10, name: "Vòng tay chỉ ngũ sắc phong thủy", category: "Phụ kiện", priceNumber: 320000, price: "320.000 đ", image: "", badge: null },
+            { id: 11, name: "Vòng tay trầm hương tự nhiên", category: "Phụ kiện", priceNumber: 650000, price: "650.000 đ", image: "", badge: "Mới" },
+            { id: 12, name: "Hộp 10 hũ coffee hòa tan cao cấp", category: "Phụ kiện", priceNumber: 200000, price: "200.000 đ", image: "", badge: null }
         ];
 
         let cart = [];
@@ -417,30 +436,34 @@
                 const startIndex = (page - 1) * itemsPerPage;
                 const endIndex = startIndex + itemsPerPage;
                 const paginatedProducts = products.slice(startIndex, endIndex);
-                const currentLang = localStorage.getItem('selectedLanguage') || 'vi';
 
                 paginatedProducts.forEach(product => {
-                    const localProduct = getLocalizedProduct(product, currentLang);
                     const productCard = document.createElement('div');
                     productCard.className = "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 flex flex-col group";
                     
+                    const imgSrc = product.image ? product.image : 'https://via.placeholder.com/400x300?text=Apalu-Store';
+
                     productCard.innerHTML = `
                         <div class="relative overflow-hidden bg-gray-100 pt-[75%]">
-                            <img src="${localProduct.image}" alt="${localProduct.name}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                            ${localProduct.badge ? `<span class="absolute top-2.5 left-2.5 bg-red-500 text-white font-semibold text-[9px] px-2 py-0.5 rounded-full uppercase shadow-sm">${localProduct.badge}</span>` : ''}
-                            <button onclick="addToCart(${localProduct.id})" class="absolute bottom-2.5 right-2.5 bg-white/90 hover:bg-teal-600 hover:text-white p-2 rounded-xl shadow-md transition-all opacity-100 sm:opacity-0 group-hover:opacity-100 translate-y-0 sm:translate-y-2 group-hover:translate-y-0 text-gray-700 z-10">
+                            <img src="${imgSrc}" alt="${product.name}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Apalu-Store'">
+                            ${product.badge ? `<span class="absolute top-2.5 left-2.5 bg-red-500 text-white font-semibold text-[9px] px-2 py-0.5 rounded-full uppercase shadow-sm">${product.badge}</span>` : ''}
+                            <button onclick="addToCart(${product.id})" class="absolute bottom-2.5 right-2.5 bg-white/90 hover:bg-teal-600 hover:text-white p-2 rounded-xl shadow-md transition-all opacity-100 sm:opacity-0 group-hover:opacity-100 translate-y-0 sm:translate-y-2 group-hover:translate-y-0 text-gray-700 z-10">
                                 <i class="fa-solid fa-cart-plus text-sm"></i>
                             </button>
                         </div>
                         <div class="p-4 flex-grow flex flex-col justify-between space-y-2.5">
                             <div>
-                                <span class="text-[10px] font-semibold uppercase tracking-wider text-teal-600">${localProduct.category}</span>
-                                <h3 class="font-bold text-gray-950 mt-0.5 group-hover:text-teal-600 transition text-xs sm:text-sm line-clamp-1">${localProduct.name}</h3>
+                                <span class="text-[10px] font-semibold uppercase tracking-wider text-teal-600">${product.category}</span>
+                                <h3 class="font-bold text-gray-950 mt-0.5 group-hover:text-teal-600 transition text-xs sm:text-sm line-clamp-1">${product.name}</h3>
                             </div>
                             <div class="flex items-center justify-between pt-2 border-t border-gray-50">
-                                <span class="font-extrabold text-teal-600 text-lg sm:text-xl">${localProduct.price}</span>
-                                <span class="text-[10px] text-yellow-500 flex items-center space-x-1">
-                                    <img src="image/murom.svg" alt="D.Libu" class="w-20 h-20 object-contain">
+                                <span class="font-extrabold text-teal-600 text-lg sm:text-xl">${product.price}</span>
+                                <span class="text-[10px] text-amber-500 flex items-center space-x-0.5">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
                                 </span>
                             </div>
                         </div>
@@ -457,7 +480,11 @@
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             const existingItem = cart.find(item => item.id === productId);
-            if (existingItem) { existingItem.quantity += 1; } else { cart.push({ ...product, quantity: 1 }); }
+            if (existingItem) { 
+                existingItem.quantity += 1; 
+            } else { 
+                cart.push({ ...product, image: product.image || 'https://via.placeholder.com/150?text=Apalu', quantity: 1 }); 
+            }
             updateCartUI();
             
             cartToggleBtn.classList.remove('cart-animate-pop', 'trigger');
@@ -475,7 +502,11 @@
             const item = cart.find(item => item.id === productId);
             if (item) {
                 item.quantity += delta;
-                if (item.quantity <= 0) { removeFromCart(productId); } else { updateCartUI(); }
+                if (item.quantity <= 0) { 
+                    removeFromCart(productId); 
+                } else { 
+                    updateCartUI(); 
+                }
             }
         }
 
@@ -493,14 +524,11 @@
                 cartToggleBtn.classList.remove('border-teal-400', 'bg-teal-50/50');
             }
 
-            const currentLang = localStorage.getItem('selectedLanguage') || 'vi';
-
             if (cart.length === 0) {
-                const emptyMsg = translations[currentLang]?.cart_empty || "Giỏ hàng trống rỗng";
                 cartItemsList.innerHTML = `
                     <div class="h-full flex flex-col items-center justify-center text-gray-400 space-y-2 py-12">
                         <i class="fa-solid fa-basket-shopping text-4xl text-gray-300"></i>
-                        <p class="text-xs">${emptyMsg}</p>
+                        <p class="text-xs">Giỏ hàng trống rỗng</p>
                     </div>`;
                 cartTotalPrice.innerText = '0 đ';
                 checkoutBtn.disabled = true;
@@ -514,22 +542,21 @@
             
             let totalAmount = 0;
             cart.forEach(item => {
-                const localItem = getLocalizedProduct(item, currentLang);
-                totalAmount += localItem.priceNumber * localItem.quantity;
+                totalAmount += item.priceNumber * item.quantity;
                 const itemRow = document.createElement('div');
                 itemRow.className = "flex items-center space-x-3 p-3 bg-gray-50 border border-gray-100 rounded-xl";
                 itemRow.innerHTML = `
-                    <img src="${localItem.image}" class="w-14 h-14 object-cover rounded-lg bg-white shrink-0 border border-gray-200">
+                    <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg bg-white shrink-0 border border-gray-200" onerror="this.src='https://via.placeholder.com/150?text=Apalu'">
                     <div class="flex-grow min-w-0">
-                        <h4 class="text-xs font-bold text-gray-900 truncate">${localItem.name}</h4>
-                        <p class="text-[11px] text-teal-600 font-extrabold mt-0.5">${localItem.price}</p>
+                        <h4 class="text-xs font-bold text-gray-900 truncate">${item.name}</h4>
+                        <p class="text-[11px] text-teal-600 font-extrabold mt-0.5">${item.price}</p>
                         <div class="flex items-center space-x-2 mt-1">
-                            <button onclick="changeQuantity(${localItem.id}, -1)" class="w-4 h-4 bg-white border border-gray-300 rounded text-[10px] flex items-center justify-center font-bold text-gray-600 hover:bg-gray-100">-</button>
-                            <span class="text-[11px] font-semibold text-gray-800 w-3 text-center">${localItem.quantity}</span>
-                            <button onclick="changeQuantity(${localItem.id}, 1)" class="w-4 h-4 bg-white border border-gray-300 rounded text-[10px] flex items-center justify-center font-bold text-gray-600 hover:bg-gray-100">+</button>
+                            <button onclick="changeQuantity(${item.id}, -1)" class="w-4 h-4 bg-white border border-gray-300 rounded text-[10px] flex items-center justify-center font-bold text-gray-600 hover:bg-gray-100">-</button>
+                            <span class="text-[11px] font-semibold text-gray-800 w-3 text-center">${item.quantity}</span>
+                            <button onclick="changeQuantity(${item.id}, 1)" class="w-4 h-4 bg-white border border-gray-300 rounded text-[10px] flex items-center justify-center font-bold text-gray-600 hover:bg-gray-100">+</button>
                         </div>
                     </div>
-                    <button onclick="removeFromCart(${localItem.id})" class="text-gray-400 hover:text-red-500 p-2 text-xs transition"><i class="fa-regular fa-trash-can"></i></button>
+                    <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-500 p-2 text-xs transition"><i class="fa-regular fa-trash-can"></i></button>
                 `;
                 cartItemsList.appendChild(itemRow);
             });
@@ -551,24 +578,16 @@
         cartModal.addEventListener('click', (e) => { if(e.target === cartModal) closeCart(); });
 
         checkoutBtn.addEventListener('click', () => {
-            const currentLang = localStorage.getItem('selectedLanguage') || 'vi';
-            const prefix = translations[currentLang]?.zalo_msg_prefix || "Xin chào Apalu-Store, tôi muốn đặt mua:\n";
-            const totalText = translations[currentLang]?.zalo_msg_total || "Tổng cộng: ";
-            
-            let message = prefix;
+            let message = "Xin chào Apalu-Store, tôi muốn đặt mua:\n";
             cart.forEach((item, index) => {
-                const localItem = getLocalizedProduct(item, currentLang);
-                message += `${index + 1}. ${localItem.name} (SL: ${localItem.quantity}) - Giá: ${localItem.price}\n`;
+                message += `${index + 1}. ${item.name} (SL: ${item.quantity}) - Giá: ${item.price}\n`;
             });
-            message += `${totalText}${cartTotalPrice.innerText}`;
+            message += `Tổng cộng: ${cartTotalPrice.innerText}`;
             window.open(`https://zalo.me/0942135506?text=${encodeURIComponent(message)}`, '_blank');
         });
 
         function updatePaginationControls() {
-            const currentLang = localStorage.getItem('selectedLanguage') || 'vi';
-            const pageWord = translations[currentLang]?.page_text || "Trang";
-
-            pageIndicator.innerText = `${pageWord} ${currentPage} / ${totalPages}`;
+            pageIndicator.innerText = `Trang ${currentPage} / ${totalPages}`;
             prevBtn.disabled = currentPage === 1;
             nextBtn.disabled = currentPage === totalPages;
 
@@ -593,24 +612,31 @@
         prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; displayProducts(currentPage); } });
         nextBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; displayProducts(currentPage); } });
 
+        document.getElementById('map-search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = document.getElementById('map-search-input').value;
+            const iframe = document.getElementById('google-map-iframe');
+            iframe.src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+        });
+
         function updateClocks() {
             const now = new Date();
             const optionsActive = { timeZone: activeTimezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-            if (selectedClockTime) { selectedClockTime.innerText = now.toLocaleTimeString('en-GB', optionsActive); }
+            if (selectedClockTime) { 
+                selectedClockTime.innerText = now.toLocaleTimeString('en-GB', optionsActive); 
+            }
 
-            const previewTimezones = ['Asia/Ho_Chi_Minh', 'America/New_York', 'Europe/Paris', 'Asia/Tokyo', 'Asia/Seoul', 'Asia/Shanghai'];
-            previewTimezones.forEach(tz => {
-                const idString = `preview-${tz.replace('/', '-')}`;
-                const element = document.getElementById(idString);
+            countriesList.forEach(c => {
+                const safeId = 'time-prev-' + c.tz.replace(/[\/]/g, '-');
+                const element = document.getElementById(safeId);
                 if (element) {
-                    const opt = { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false };
+                    const opt = { timeZone: c.tz, hour: '2-digit', minute: '2-digit', hour12: false };
                     element.innerText = now.toLocaleTimeString('en-GB', opt);
                 }
             });
         }
 
         setInterval(updateClocks, 1000);
-        updateClocks();
 
         function copySTK() {
             const stk = document.getElementById('stk-text').innerText;
@@ -622,21 +648,8 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('selectedLanguage') || 'vi';
-            const matchedTimezone = Object.keys(timezoneToLangMap).find(key => timezoneToLangMap[key] === savedLang);
-            if (matchedTimezone) {
-                activeTimezone = matchedTimezone;
-                let icon = '🇻🇳', name = 'Việt Nam';
-                if(matchedTimezone === 'America/New_York') { icon = '🇺🇸'; name = 'English'; }
-                else if(matchedTimezone === 'Europe/Paris') { icon = '🇫🇷'; name = 'Français'; }
-                else if(matchedTimezone === 'Asia/Tokyo') { icon = '🇯🇵'; name = '日本語'; }
-                else if(matchedTimezone === 'Asia/Seoul') { icon = '🇰🇷'; name = '한국어'; }
-                else if(matchedTimezone === 'Asia/Shanghai') { icon = '🇨🇳'; name = '中文'; }
-                
-                selectedClockIcon.innerHTML = icon;
-                selectedClockName.innerText = name;
-            }
-            updateContent(savedLang);
+            displayProducts(currentPage);
+            renderCountryList();
         });
     </script>
 </body>
